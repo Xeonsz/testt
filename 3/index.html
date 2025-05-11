@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ucapan Spesial</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #ffe4ec;
+      font-family: 'Segoe UI', cursive;
+      text-align: center;
+      color: #000;
+    }
+
+    .love {
+      position: absolute;
+      bottom: -50px;
+      font-size: 30px;
+      color: rgba(255, 50, 100, 0.5);
+      animation: floatUp 4s linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .text {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    .card {
+      width: 60%;
+      background-color: white;
+      overflow: hidden;
+      padding: 0 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      max-height: 0;
+      opacity: 0;
+      animation: unfoldCard 4s ease-out forwards;
+    }
+
+    @keyframes unfoldCard {
+      0% {
+        max-height: 0;
+        opacity: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      100% {
+        max-height: 1000px;
+        opacity: 1;
+        padding-top: 2em;
+        padding-bottom: 2em;
+      }
+    }
+
+    .card h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #333;
+      text-align: left;
+    }
+
+    .footer {
+      margin-top: 2em;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .heart {
+      font-size: 2em;
+      text-align: center;
+      margin-top: 1em;
+      color: red;
+    }
+
+    .gift-container {
+      position: relative;
+      width: 250px;
+      height: 160px;
+      margin: 20px auto 10px;
+    }
+
+    #loveBtn {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 140px;
+      z-index: 2;
+    }
+
+    #nextBtn {
+      position: absolute;
+      left: 50px;
+      bottom: 0;
+      width: 160px;
+      z-index: 1;
+    }
+
+    #fireworksCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hide {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="fireworksCanvas"></canvas>
+
+  <!-- Audio untuk slide 2 -->
+  <audio id="backgroundMusic">
+    <source src="whatsapp audio 2025-05-12 at 01.45.03.mpeg" type="audio/mp3">
+    Maaf, browser kamu tidak mendukung audio.
+  </audio>
+
+  <!-- Audio tambahan untuk slide 3 -->
+  <audio id="musicSlide3">
+    <source src="whatsapp audio 2025-05-01 at 11.55.34.mpeg" type="audio/mp3">
+    Maaf, browser kamu tidak mendukung audio.
+  </audio>
+
+  <div class="slide active" id="slide1">
+    <div class="text">Happy Birthday Arianii🥳🥳</div>
+    <div class="gift-container">
+      <img id="loveBtn" src="whatsApp_image_2025-05-01_at_20.49.35-removebg-preview.png" alt="Klik untuk membuka hadiah">
+      <img id="nextBtn" src="whatsApp_image_2025-05-01_at_20.49.14-removebg-preview.png" alt="Klik untuk hadiah kedua">
+    </div>
+    <div class="text">Buka kadonya dari yang kecil yaa</div>
+  </div>
+
+  <div class="slide" id="slide2">
+    <div class="card">
+      <h1>Ucapan Spesial Dari Aku</h1>
+      <p>
+        Bumi seluas ini, tapi untungnya kita bertemu.<br>
+        Selamat ulang tahun arianiiii, Di usiamu yang baru ini, semoga tahun ini memberimu segala yang kamu impikan. 
+        Semoga segala urusan kamu dimudahkan, sehat sehat terus, semoga selalu dan terus bahagia, dan juga menjadi pribadi yang lebih baik kedepannya.
+      </p>
+      <p>
+        Maaf yaaa enggak bisa merayakan secara langsung di hadapanmu. Terima kasih sudah datang sebagai tawa, senang, dan suka. Sekalii lagii selamat ulang tahunnnn.
+      </p>
+      <p class="footer">"Never Be Afraid To Grow Up",<br /></p>
+      <div class="heart">♥</div>
+    </div>
+  </div>
+
+  <div class="slide" id="slide3">
+    <div class="text" style="font-size: 2em; margin-bottom: 1em;">Buat Kamuu!!</div>
+    <img src="img-20250428-wa0017-removebg-preview__1_-removebg-preview.png"
+         alt="Bunga"
+         style="margin-top: 10px; max-width: 20%; border-radius: 5px; box-shadow: 0 4px 5px rgba(0,0.1);">
+         <div class="text" style="font-size: 1.2em; max-width: 600px;">
+          Aku tahu ini mungkin nggak seberapa,  
+          Semoga bunga kecil ini bisa jadi simbol bahwa aku selalu ingin melihat kamu bahagia.  
+          Sekali lagi, selamat ulang tahun, Ariani.
+        </div>
+    <div class="heart" style="font-size: 2.5em; margin-top: 1em;">♥</div>
+  </div>
+
+  <script>
+    const music = document.getElementById('backgroundMusic');
+    const music3 = document.getElementById('musicSlide3');
+
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.innerHTML = '♥';
+      love.style.left = Math.random() * window.innerWidth + 'px';
+      love.style.fontSize = (20 + Math.random() * 30) + 'px';
+      love.style.animationDuration = (3 + Math.random() * 2) + 's';
+      document.body.appendChild(love);
+      love.addEventListener('animationend', () => love.remove());
+    }
+
+    let loveInterval;
+    document.getElementById('loveBtn').addEventListener('click', () => {
+      document.getElementById('slide1').classList.remove('active');
+      document.getElementById('slide2').classList.add('active');
+      document.getElementById('fireworksCanvas').classList.add('hide');
+
+      music.currentTime = 0;
+      music.play();
+      loveInterval = setInterval(createLove, 300);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      document.getElementById('slide1').classList.remove('active');
+      document.getElementById('slide3').classList.add('active');
+      document.getElementById('fireworksCanvas').classList.add('hide');
+
+      music.pause();
+      music.currentTime = 0;
+
+      music3.currentTime = 0;
+      music3.play();
+    });
+
+    const canvas = document.getElementById("fireworksCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    class Firework {
+      constructor(x, y, targetY, color) {
+        this.x = x;
+        this.y = y;
+        this.targetY = targetY;
+        this.color = color;
+        this.speedY = -5;
+        this.exploded = false;
+        this.particles = [];
+      }
+
+      update() {
+        if (!this.exploded) {
+          this.y += this.speedY;
+          if (this.y <= this.targetY) {
+            this.exploded = true;
+            for (let i = 0; i < 80; i++) {
+              this.particles.push(new Particle(this.x, this.y, this.color));
+            }
+          }
+        } else {
+          this.particles.forEach(p => p.update());
+        }
+      }
+
+      draw() {
+        if (!this.exploded) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        } else {
+          this.particles.forEach(p => p.draw());
+        }
+      }
+
+      isDone() {
+        return this.exploded && this.particles.every(p => p.alpha <= 0);
+      }
+    }
+
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = Math.random() * 2 + 1;
+        this.color = color;
+        const angle = Math.random() * 2 * Math.PI;
+        const speed = Math.random() * 4 + 2;
+        this.speedX = Math.cos(angle) * speed;
+        this.speedY = Math.sin(angle) * speed;
+        this.alpha = 1;
+        this.gravity = 0.05;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.speedY += this.gravity;
+        this.alpha -= 0.01;
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    const fireworks = [];
+
+    function launchFirework() {
+      if (document.getElementById('slide1').classList.contains('active')) {
+        const x = Math.random() * canvas.width;
+        const y = canvas.height;
+        const targetY = 100 + Math.random() * 200;
+        const color = "#ffffff";
+        fireworks.push(new Firework(x, y, targetY, color));
+      }
+    }
+
+    function animateFireworks() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      fireworks.forEach((fw, i) => {
+        fw.update();
+        fw.draw();
+        if (fw.isDone()) {
+          fireworks.splice(i, 1);
+        }
+      });
+      requestAnimationFrame(animateFireworks);
+    }
+
+    animateFireworks();
+
+    setInterval(() => {
+      for (let i = 0; i < 5; i++) {
+        setTimeout(launchFirework, Math.random() * 1000);
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
